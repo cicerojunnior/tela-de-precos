@@ -1,0 +1,251 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #F8FAFC;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+main.cartoes {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 70rem;
+  height: 26rem;
+
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 2rem;
+}
+main.cartoes div.cartao {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 3rem 2rem 2rem;
+  border: .1rem solid #E2E8F0;
+  border-radius: .625rem;
+  gap: 0.625rem;
+
+  width: 33%;
+  height: inherit;
+
+  flex-grow: 0;
+}
+main.cartoes div.cartao:active,
+main.cartoes div.cartao:hover {
+  border: .1rem solid #996DFF;
+  
+}
+span.titulo {
+  color: #7C3AED;
+  font-weight: 600;
+  font-size: .875rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+div.cartao div.conteudo {
+  width: 100%;
+  height: inherit;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2rem;
+}
+div.decolar {
+  position: relative;
+  isolation: isolate;
+  background: #0F172A;
+
+  border: none;
+}
+div.decolar span.titulo {
+  color: #996DFF;
+}
+div.conteudo div.conteudo-topo {
+  width: 100%;
+  flex-direction: column;
+  gap: .5rem;
+}
+div.conteudo-topo div.plano {
+  width: 100%;
+  height: 3rem;
+
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+
+  flex: none;
+  flex-grow: 0;
+}
+.decolar div.plano {
+  color: #F8FAFC;
+}
+div.plano span.essencial,
+div.plano span.ultimate,
+div.plano span.empresa {
+  height: inherit;
+
+  font-weight: 700;
+  font-size: 2rem;
+
+  flex: none;
+  flex-grow: 0;
+}
+div.plano span.preco {
+  height: inherit;
+  
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 3.5rem;
+
+  flex: none;
+  flex-grow: 0;
+}
+
+button[type=button] {
+  cursor: pointer;
+
+  width: 100%;
+  height: 3rem;
+
+  padding: 1rem 1.5rem;
+  align-self: stretch;
+  border: .1rem solid #1E293B;
+  border-radius: .25rem;
+
+  font-size: 1rem;
+  font-style: normal;
+  color: #1E293B;
+  font-weight: 700;
+}
+button[type=button]:active,
+button[type=button]:hover {
+  background: #1E293B;
+  color: #FFF;
+}
+div.decolar button[type=button] {
+  background: #996DFF;
+  color: #fff;
+}
+div.decolar button[type=button]:active,
+div.decolar button[type=button]:hover {
+  background: #7C3AED;
+}
+
+div.conteudo span.divisor {
+  width: 100%;
+
+  border: .1rem solid #E2E8F0;
+
+  flex: none;
+  align-self: stretch;
+  flex-grow: 0;
+}
+div.conteudo span.divisor-center {
+  border: .1rem solid #334155;
+}
+
+div.lista-grid {
+  width: inherit;
+  display: grid;
+  grid-template-columns: max-content auto max-content;
+  gap: .5rem;
+  
+  align-items: center;
+}
+
+div.lista-grid img {
+  width: 1rem;
+  height: 1rem;
+}
+div.lista-grid span {
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  letter-spacing: .06em;
+  line-height: 1.5rem;
+  color: #475569;
+}
+.cinza span{
+  color: #CBD5E1 !important;
+}
+div.tag {
+  position: absolute;
+  left: 50%;
+  top: -1rem;
+  transform: translateX(-50%);
+
+  width: 8.25rem;
+  height: 2rem;
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  
+  color: #0F172A;
+  font-weight: 700;
+  font-size: .75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  background: #FBA94C;
+  border-radius: .375rem;
+
+  z-index: 1;
+}
+
+@media (max-width: 27rem) {
+  main.cartoes {
+    position: relative;
+    left: 0;
+    top: 0;
+    transform: none;
+
+    width: 100%;
+    height: 100%;
+
+    flex-direction: column;
+    padding: 5rem 1.25rem;
+    gap: 1.5rem;
+  }
+  main.cartoes div.cartao {
+    width: 100%;
+  }
+  div.conteudo-topo div.plano {
+    height: 2.25rem;
+
+  }
+  div.plano span.essencial,
+  div.plano span.ultimate,
+  div.plano span.empresa {
+    height: inherit;
+
+    font-size: 1.5rem;
+  }
+  div.plano span.preco {
+
+    line-height: 2.6rem;
+  }
+}
+@media (max-width: 20.75rem) {
+  span.titulo {
+    text-align: center;
+  }
+  div.conteudo-topo div.plano {
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    gap: 0;
+  }
+  button[type=button] {
+    height: max-content;
+    padding: 1rem 1rem;
+  }
+}
